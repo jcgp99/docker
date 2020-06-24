@@ -6,4 +6,4 @@ before_install:
     - docker build -t jcgp99/docker -f Dockerfile.dev .
 
 script:
-    - docker run jcgp99/docker npm run test -- --coverage
+    - docker run -e CI=true jcgp99/docker npm run test -- --coverage
