@@ -3,7 +3,7 @@ FROM node:alpine as builder
 WORKDIR '/app'
 
 COPY package*.json ./
-RUN npm install
+RUN npm install  --prefer-offline --no-audit -timeout=9999999
 
 COPY . .
 RUN npm run build
